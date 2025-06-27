@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let result = '';
         const charactersLength = characters.length;
-        for (let i = 0; i < 6; i++) { // Captcha de 6 caracteres
+        for (let i = 0; i < 6; i++) { 
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
         captchaValue = result;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault(); 
 
-        // Validar el captcha
+       
         if (captchaInput.value.toLowerCase() !== captchaValue.toLowerCase()) {
             alert('El código CAPTCHA es incorrecto. Por favor, inténtalo de nuevo.');
             generateCaptcha(); 
