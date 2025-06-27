@@ -1,0 +1,38 @@
+/* Estilos específicos para la página de contacto */
+
+#formulario-contacto h2 {
+    color: #A0522D;
+}
+
+#formulario-contacto p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.icon-social {
+    width: 60px; /* Tamaño de los iconos de redes sociales */
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+#informacion-adicional a {
+    color: #5C4033;
+}
+
+#informacion-adicional a:hover {
+    color: #D2B48C;
+}
+
+#captchaDisplay {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    user-select: none; /* Evita que el usuario seleccione el texto del captcha */
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+}

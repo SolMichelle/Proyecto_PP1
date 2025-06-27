@@ -1,0 +1,30 @@
+/* Puedes agregar estilos específicos para la página de productos aquí.
+   Mantén los estilos generales en style.css */
+
+.product-item img {
+    height: 200px; /* Altura fija para las imágenes de los productos */
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.2em;
+    color: #8B4513;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-weight: bold;
+    color: #A0522D;
+    font-size: 1.1em;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #5C4033;
+    font-weight: bold;
+}
+
+.list-group-item a:hover {
+    color: #D2B48C;
+}

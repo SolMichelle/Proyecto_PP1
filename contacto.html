@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Delicias del Horno - Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row align-items-center py-3">
+            <div class="col-lg-2 col-md-3 col-sm-4 text-start">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar productos..." aria-label="Buscador de productos">
+                    <button class="btn btn-outline-secondary" type="button">🔍</button>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-4 text-center">
+                <img src="img/logo.png" alt="Logo Panadería Delicias del Horno" class="img-fluid logo">
+                <h1>Delicias del Horno</h1>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 text-end">
+                <a href="#" class="btn btn-link">🛒 Carrito</a>
+                <a href="#" class="btn btn-link">Ingresar</a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <section id="formulario-contacto" class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <h2 class="text-center mb-4">Envíanos tu Consulta o Pedido</h2>
+                <p class="text-center">Si tienes alguna pregunta, sugerencia o deseas realizar un pedido especial, completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
+
+                <form id="contactForm" class="p-4 border rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre Completo:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="celular" class="form-label">Celular de Contacto:</label>
+                        <input type="tel" class="form-control" id="celular" name="celular" placeholder="Ej: +5491112345678" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pedido" class="form-label">Tu Consulta o Pedido:</label>
+                        <textarea class="form-control" id="pedido" name="pedido" rows="5" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaPedido" class="form-label">Fecha Preferida para el Pedido/Contacto:</label>
+                        <input type="date" class="form-control" id="fechaPedido" name="fechaPedido">
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <label for="captchaInput" class="form-label me-3">Captcha:</label>
+                        <span id="captchaDisplay" class="border p-2 me-3 rounded bg-light fw-bold fs-5"></span>
+                        <input type="text" class="form-control w-25" id="captchaInput" name="captchaInput" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Enviar Pedido/Consulta</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="informacion-adicional" class="my-5 text-center">
+            <h3 class="mb-4">Encuéntranos y Contáctanos</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <a href="https://www.instagram.com/tu_panaderia" target="_blank" class="text-decoration-none">
+                        <img src="img/instagram-icon.png" alt="Instagram" class="icon-social">
+                        <p class="mt-2">Síguenos en Instagram</p>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="https://wa.me/tunumerodetelefono" target="_blank" class="text-decoration-none">
+                        <img src="img/whatsapp-icon.png" alt="WhatsApp" class="icon-social">
+                        <p class="mt-2">Chatear por WhatsApp</p>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="https://maps.app.goo.gl/TuDireccionEnGoogleMaps" target="_blank" class="text-decoration-none">
+                        <img src="img/location-icon.png" alt="Ubicación" class="icon-social">
+                        <p class="mt-2">Nuestra Ubicación</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container-fluid bg-light py-4 mt-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h5>Navegación</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Medios de Pago</h5>
+                <ul class="list-unstyled">
+                    <li>Tarjetas de Crédito/Débito</li>
+                    <li>Mercado Pago</li>
+                    <li>Transferencia Bancaria</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.instagram.com/tu_panaderia" target="_blank">Instagram</a></li>
+                    <li><a href="https://wa.me/tunumerodetelefono" target="_blank">WhatsApp</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTFyMGUHv+azPRcHIkjp3rBgl8mXmja4yQpXYbqVFfQ0/fE5L5zC" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlco9j7q8xL+0q8qH02p1Jz6S6Pz7dGjQ8z0b2y1g6zS6fD6O" crossorigin="anonymous"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
