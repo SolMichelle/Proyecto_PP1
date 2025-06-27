@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Display', serif;
+    background: #fdfdf1;}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;}
+.logo {
+    width: 350px; 
+    height: auto;
+    margin-bottom: 40px;}
+.nav {
+    display: flex;
+    gap: 40px;}
+.nav a {text-decoration: none;
+    color: #36373a;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #fdfdf1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s;}
+.nav a:hover {background: #e0e0e0;}
+.top-left-search {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    font-size: 1.1em;
+    color: #36373a;
+    background: #fdfdf1;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'DM Serif Display', serif;
+    z-index: 10;}
+.icono-lupa {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 8px;}.top-right-login {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 1.1em;
+    color: #36373a;
+    background: #fdfdf1;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'DM Serif Display', serif;
+    display: flex;
+    align-items: center;
+    z-index: 10;}
+.icono-user {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-left: 8px;}
+.form-contacto-lateral {
+    margin-left: 0 ;      }
+.col-md-5 {
+    padding-left: 0 ;     }
+.col-md-7 .text-center {
+    margin-top: 80px ;   }
+.info-contacto h6 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #36373a;}
+.text-center.w-100.my-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.btn-lg {
+    font-size: 1.5rem;
+    padding: 16px 32px;}
+.btn-formulario {
+    background-color: #fdfdf1;
+    color: #36373a;
+    border: 1px solid #e0e0e0;
+    font-size: 1.5rem;
+    padding: 16px 32px;}
+.btn-formulario:hover {
+    background-color: #e0e0e0;
+    color: #36373a;}
