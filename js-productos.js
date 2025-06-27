@@ -1,52 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const categoryLinks = document.querySelectorAll('.list-group-item a');
-    const productItems = document.querySelectorAll('.product-item');
-    const searchInput = document.querySelector('header .input-group input[type="text"]');
-    const searchButton = document.querySelector('header .input-group button');
-
-    // Función para filtrar productos por categoría
-    function filterProducts(category) {
-        productItems.forEach(item => {
-            if (category === 'all' || item.dataset.category === category) {
-                item.style.display = 'block'; // Muestra el producto
-            } else {
-                item.style.display = 'none'; // Oculta el producto
-            }
-        });
-    }
-
-    // Event listener para los enlaces de categoría
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita que el enlace recargue la página
-            const category = event.target.dataset.category;
-            filterProducts(category);
-        });
-    });
-
-    // Función para buscar productos
-    function searchProducts() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        productItems.forEach(item => {
-            const productName = item.querySelector('.card-title').textContent.toLowerCase();
-            if (productName.includes(searchTerm)) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
-
-    // Event listener para el botón de búsqueda
-    searchButton.addEventListener('click', searchProducts);
-
-    // Event listener para la tecla "Enter" en el input de búsqueda
-    searchInput.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter') {
-            searchProducts();
-        }
-    });
-
-    // Cargar todos los productos al inicio
-    filterProducts('all');
-});
+document.querySelectorAll('.categoria-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const categoria = this.getAttribute('data-categoria');
+        document.querySelectorAll('.row [data-categoria]').forEach(card => {
+            if (card.classList.contains('col-6') || card.classList.contains('col-md-3')) {
+                if (categoria === 'todas' || card.getAttribute('data-categoria') === categoria) {
+                    card.style.display = '';
+                } else {card.style.display = 'none'; }}});});});
+              function cambiarSaborGalleta(select) {
+    const img = select.closest('.card').querySelector('img');
+    img.src = 'imagenes/' + select.value;}
+function cambiarSaborFactura(select) {
+    const img = select.closest('.card').querySelector('img');
+    img.src = 'imagenes/' + select.value;}
+function cambiarSaborTarta(select) {
+    const img = select.closest('.card').querySelector('img');
+    img.src = 'imagenes/' + select.value;}
+function cambiarSaborTortita(select) {
+    const img = select.closest('.card').querySelector('img');
+    img.src = 'imagenes/' + select.value;}
+function cambiarSaborSanguchito(select) {
+    const img = select.closest('.card').querySelector('img');
+    img.src = 'imagenes/' + select.value;}
