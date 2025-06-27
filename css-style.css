@@ -1,60 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-.logo {
-    max-width: 150px; /* Ajusta el tamaño del logo */
-    height: auto;
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #8B4513; /* Un color marrón para el título */
-    margin-top: 10px;
-}
-
-nav .nav-link {
-    font-weight: bold;
-    color: #5C4033; /* Color para los enlaces de navegación */
-    margin: 0 15px;
-}
-
-nav .nav-link:hover {
-    color: #D2B48C; /* Color al pasar el mouse */
-}
-
-/* Estilos para el carrusel (Bootstrap ya maneja gran parte) */
-.carousel-item img {
-    max-height: 500px; /* Altura máxima para las imágenes del carrusel */
-    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-}
-
-#quienes-somos h2, #retiro-pago h3 {
-    color: #A0522D; /* Color para los subtítulos */
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #F5DEB3 !important; /* Un beige claro para el pie de página */
-    color: #5C4033;
-}
-
-footer h5 {
-    color: #8B4513;
-    margin-bottom: 15px;
-}
-
-footer ul {
+    margin: 0;
     padding: 0;
-}
-
-footer ul li a {
-    color: #5C4033;
-    text-decoration: none;
-}
-
-footer ul li a:hover {
-    color: #D2B48C;
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    background: #fdfbf3;}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;}
+.logo {
+    width: 350px; 
+    height: auto;
+    margin-bottom: 40px;}
+.nav {
+    display: flex;
+    gap: 40px;}
+.nav a {text-decoration: none;
+    color: #333;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s;}
+.nav a:hover {background: #e0e0e0;}
+.top-left-search {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    font-size: 1.1em;
+    color: #444;
+    background: #fffbe8;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    z-index: 10;}
+.icono-lupa {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 8px;}
+.carousel-inner img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;}
+.carousel-caption {
+    bottom: 20px;
+    max-height: 60px;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    padding-bottom: 0.5rem;}
+.top-right-login {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 1.1em;
+    color: #444;
+    background: #fffbe8;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    z-index: 10;}
+.icono-user {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-left: 8px;}
+.subtitulo-panaderia {
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    font-size: 2rem;
+    color: #7c5c36;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
 }
