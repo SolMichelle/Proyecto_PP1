@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
-    background: #fdfbf3;}
+    font-family: 'DM Serif Display', serif;
+    background: #fdfdf1;}
 .container {
     display: flex;
     flex-direction: column;
@@ -18,11 +18,11 @@ body {
     display: flex;
     gap: 40px;}
 .nav a {text-decoration: none;
-    color: #333;
+    color: #36373a;
     font-size: 1.5em;
     padding: 10px 25px;
     border-radius: 5px;
-    background: #fff;
+    background: #fdfdf1;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     transition: background 0.2s;}
 .nav a:hover {background: #e0e0e0;}
@@ -31,12 +31,12 @@ body {
     top: 18px;
     left: 24px;
     font-size: 1.1em;
-    color: #444;
-    background: #fffbe8;
+    color: #36373a;
+    background: #fdfdf1;
     padding: 6px 16px;
     border-radius: 16px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    font-family: 'DM Serif Display', serif;
     z-index: 10;}
 .icono-lupa {
     width: 35px;
@@ -47,12 +47,12 @@ body {
     top: 18px;
     right: 24px;
     font-size: 1.1em;
-    color: #444;
-    background: #fffbe8;
+    color: #36373a;
+    background: #fdfdf1;
     padding: 6px 16px;
     border-radius: 16px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    font-family: 'DM Serif Display', serif;
     display: flex;
     align-items: center;
     z-index: 10;}
@@ -65,16 +65,16 @@ body {
     left: 60px; 
     top: 50%;
     transform: translateY(-50%);
-    background: #fffbe8;
+    background: #fdfdf1;
     border-radius: 12px;
     padding: 18px 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    font-family: 'DM Serif Display', serif;
     min-width: 160px;
     text-align: center;}
 .categorias-lateral h4 {
     font-size: 1.5em;
-    color: #7c5c36;
+    color: #36373a;
     margin-bottom: 16px;
     letter-spacing: 1px;}
 .categorias-lateral ul {
@@ -82,5 +82,5 @@ body {
 .categorias-lateral ul li {
     margin-bottom: 14px;
     font-size: 1.3em;
-    color: #444;
+    color: #36373a;
     list-style: none;}
