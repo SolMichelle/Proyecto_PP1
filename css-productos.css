@@ -1,30 +1,86 @@
-/* Puedes agregar estilos específicos para la página de productos aquí.
-   Mantén los estilos generales en style.css */
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
 
-.product-item img {
-    height: 200px; /* Altura fija para las imágenes de los productos */
-    object-fit: cover;
-    width: 100%;
-}
-
-.card-title {
-    font-size: 1.2em;
-    color: #8B4513;
-    margin-top: 10px;
-}
-
-.card-text {
-    font-weight: bold;
-    color: #A0522D;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    background: #fdfbf3;}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;}
+.logo {
+    width: 350px; 
+    height: auto;
+    margin-bottom: 8px;}
+.nav {
+    display: flex;
+    gap: 40px;}
+.nav a {text-decoration: none;
+    color: #333;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s;}
+.nav a:hover {background: #e0e0e0;}
+.top-left-search {
+    position: absolute;
+    top: 18px;
+    left: 24px;
     font-size: 1.1em;
-}
-
-.list-group-item a {
-    text-decoration: none;
-    color: #5C4033;
-    font-weight: bold;
-}
-
-.list-group-item a:hover {
-    color: #D2B48C;
-}
+    color: #444;
+    background: #fffbe8;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    z-index: 10;}
+.icono-lupa {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 8px;}.top-right-login {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 1.1em;
+    color: #444;
+    background: #fffbe8;
+    padding: 6px 16px;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    z-index: 10;}
+.icono-user {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-left: 8px;}.categorias-lateral {
+    position: fixed;
+    left: 60px; 
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fffbe8;
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    font-family: 'Sorts Mill Goudy', Arial, sans-serif;
+    min-width: 160px;
+    text-align: center;}
+.categorias-lateral h4 {
+    font-size: 1.5em;
+    color: #7c5c36;
+    margin-bottom: 16px;
+    letter-spacing: 1px;}
+.categorias-lateral ul {
+    padding-left: 0;}
+.categorias-lateral ul li {
+    margin-bottom: 14px;
+    font-size: 1.3em;
+    color: #444;
+    list-style: none;}
