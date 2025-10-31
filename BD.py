@@ -37,7 +37,7 @@ def get_products():
     
         cursor = conn.cursor(dictionary=True) 
         
-        query = "SELECT id_producto, nombre, precio, categoria FROM productos WHERE stock > 0 ORDER BY categoria, nombre;"
+        query = "SELECT id_producto, nombre, precio, categoria, imagen FROM productos WHERE stock > 0 ORDER BY categoria, nombre;"
         
         cursor.execute(query)
         productos = cursor.fetchall()
@@ -244,3 +244,4 @@ def run_reporting_queries():
 #         print("Venta insertada correctamente en la BDD.")
 #     else:
 #         print("Fallo al insertar la venta.")
+
