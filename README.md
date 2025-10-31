@@ -1,8 +1,50 @@
-# Proyecto_PP1
+# Proyecto_PP1: Tienda virtual de una panadaría 
+
 Este repositorio contiene los archivos necesarios para el proyecto de la asignatura Práctica Profesional Uno del IES 9008 "Manuel Belgrano".
 
-*Se utiliza la licencia MIT.*
+Se utiliza la licencia MIT.
 
-El proyecto consiste en diseñar una página con tienda virtual para una panadería mediana ubicada en Mendoza. El alcance esperado es la clientela usual de la panadería sumando nuevos clientes. Los problemas que tenía este negocio eran la visibilidad y las complicaciones con los pedidos. Se pensó que implementando una tienda virtual y una sección para encargos podrían ser claves para resolver estas situaciones, porque darían más opciones para conocer el local y realizar pedidos. Del mismo modo, al tener enunciados entendibles, imágenes claras y precios actualizados este sitio web mejora la imagen de la marca. Además, habrá un link con las redes sociales de la panadería para una mejor comunicación con los usuarios.
+## Descripción del proyecto
 
-Las limitaciones con las que lidiar son la complejidad del sitio, dado que se quiere garantizar que no sea difícil de usar para los usuarios. Asimismo, se intenta crear un sitio simple, aunque sólido y bien hecho, considerando los conocimientos de nivel principiante a intermedio de las personas encargadas de hacerlo. Las historias de usuario fueron ... y se implementaron con la metodología scrumban.
+El proyecto consiste en diseñar e implementar una página web con funcionalidad de tienda virtual para una panadería mediana ubicada en Mendoza.
+
+### Problemas resueltos:
+
+El negocio enfrentaba problemas de baja visibilidad y complicaciones en la gestión de pedidos. La implementación de este sitio web resuelve estas situaciones al:
+
+- Ofrecer una tienda virtual y una sección para encargos claros, ampliando la base de clientes.
+
+- Mejorar la imagen de la marca con enunciados entendibles, imágenes claras y precios actualizados.
+
+- Facilitar la comunicación con los usuarios mediante un link directo a las redes sociales de la panadería.
+
+## Tecnologías implementadas (Tech Stack)
+
+Este proyecto se basa en una arquitectura cliente-servidor para simular un entorno de producción real:
+
+### Frontend (Cliente):
+
+HTML5, CSS3 y JavaScript.
+
+Uso de la librería Bootstrap para garantizar un diseño responsive y moderno.
+
+Toda la lógica del carrito de compras y la interacción con el usuario se maneja con JavaScript.
+
+### Backend (Servidor y Persistencia):
+
+- Python: utilizado para la lógica de negocio y la gestión de la base de datos.
+
+- MySQL: sistema de gestión de bases de datos relacionales para almacenar productos, precios y registrar pedidos de venta.
+
+
+## Metodología y equipo
+
+El proyecto fue desarrollado utilizando la metodología Scrum-Kanban (Scrumban).
+
+- Propietario del Producto: dueño de la panadería.
+
+- Experto en Scrum y BD: Sol Ponce.
+
+- Líder de Desarrollo: Aldana Aranda.
+
+A pesar de ser un equipo pequeño, la colaboración fue clave para superar los desafíos técnicos iniciales y lograr la integración exitosa del frontend con la BD.
