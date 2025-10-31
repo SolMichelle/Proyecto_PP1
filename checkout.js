@@ -1,4 +1,3 @@
-
 (function () {
   const STORAGE_KEY = 'miCarritoV1';
   function getCart() {
@@ -48,8 +47,22 @@
         localStorage.removeItem(STORAGE_KEY);
         msg.innerHTML = '<div class="alert alert-success">Pago realizado con éxito. Gracias por su compra.</div>';
         try { window.opener?.location && window.opener.location.reload(); } catch(e){}
-        setTimeout(()=> window.location.href = 'main.html', 2500);
+        fetch('http://127.0.0.1:5000/pedidos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          'cliente': {
+            'nombre': form['nombre'].value,
+            'correo': form['correo'].value,
+            'direccion': form['direccion'].value,
+            'tarjeta': form['tarjeta'].value
+          },
+          'carrito': getCart(),
+          'total': calcTotal(getCart())
+        })}).then(response => response.json()).then(data => {
+          if (data.status === 'success') {
+            setTimeout(()=> window.location.href = 'main.html', 2500);
+          }
+        });
       }, 1200);
     });
   });
 })();
+
