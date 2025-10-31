@@ -4,6 +4,7 @@ Este repositorio contiene los archivos necesarios para el proyecto de la asignat
 
 Se utiliza la licencia MIT.
 
+
 ## Descripción del proyecto
 
 El proyecto consiste en diseñar e implementar una página web con funcionalidad de tienda virtual para una panadería mediana ubicada en Mendoza.
@@ -17,6 +18,7 @@ El negocio enfrentaba problemas de baja visibilidad y complicaciones en la gesti
 - Mejorar la imagen de la marca con enunciados entendibles, imágenes claras y precios actualizados.
 
 - Facilitar la comunicación con los usuarios mediante un link directo a las redes sociales de la panadería.
+
 
 ## Tecnologías implementadas (Tech Stack)
 
@@ -35,6 +37,17 @@ Toda la lógica del carrito de compras y la interacción con el usuario se manej
 - Python: utilizado para la lógica de negocio y la gestión de la base de datos.
 
 - MySQL: sistema de gestión de bases de datos relacionales para almacenar productos, precios y registrar pedidos de venta.
+
+
+## Requisitos para ejecución local
+
+Para ejecutar el backend de Python (`app.py`) y la base de datos de este proyecto, se deben tener instalados y configurados los siguientes elementos en su entorno local:
+* **1. Servidor de Base de Datos (BD):**
+    * **MySQL Server:** Necesario para alojar la base de datos `panaderia_bd`
+* **2. Lenguaje de programación:**
+    * **Python 3.x:** Requerido para ejecutar el script del servidor (`app.py`) que maneja la lógica de la BD.
+* **3. Librerías de Python:**
+    * **`mysql-connector-python`:** Esta es la librería específica que Python utiliza para conectarse, enviar consultas SQL y recibir respuestas del servidor MySQL.
 
 
 ## Metodología y equipo
