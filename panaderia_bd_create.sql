@@ -30,3 +30,32 @@ CREATE TABLE ventas_detalle (
     FOREIGN KEY (id_pedido) REFERENCES ventas_cabecera(id_pedido),
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
+
+USE panaderia_bd;
+
+DROP TABLE IF EXISTS Ventas;
+DROP TABLE IF EXISTS Pedidos;
+DROP TABLE IF EXISTS ventas_formulario;
+DROP TABLE IF EXISTS ventas_detalle;
+
+CREATE TABLE Pedidos(
+	id_venta INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(100) NOT NULL,
+	correo VARCHAR(100),
+	direccion VARCHAR(50),
+	tarjeta INT NOT NULL,
+	total DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE Ventas(
+	id_venta INT PRIMARY KEY AUTO_INCREMENT,
+	id_pedido INT NOT NULL,
+	id_producto INT NOT NULL,
+	FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_venta),
+	FOREIGN KEY (id_producto) REFERENCES Productos(id_producto)
+);
+
+
+ALTER TABLE Productos ADD imagen VARCHAR(200);
+
+
