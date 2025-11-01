@@ -225,3 +225,42 @@ input, textarea, button, h1, h2, h3, h4, h5, h6, p, label {
     align-items: center;
 }
 
+/* --- ESTILOS PARA EL FOOTER --- */
+
+.footer {
+    background-color: #f0f0f0; 
+    color: #36373a; 
+    font-size: 1.1em;
+    border-top: 2px solid #e0e0e0; 
+}
+
+.footer h5 {
+    font-weight: bold;
+    color: #36373a;
+    letter-spacing: 1px;
+}
+
+.footer a {
+    color: #36373a; 
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: #5d5e61; 
+}
+
+/* Estilos para los iconos de redes  */
+.footer-redes a img {
+    border: 1px solid #36373a;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-redes a img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer .list-unstyled li {
+    margin-bottom: 8px;
+}
+
