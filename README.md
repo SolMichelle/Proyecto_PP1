@@ -42,21 +42,24 @@ Toda la lógica del carrito de compras y la interacción con el usuario se manej
 ## Requisitos para ejecución local
 
 Para ejecutar el backend de Python (`app.py`) y la base de datos de este proyecto, se deben tener instalados y configurados los siguientes elementos en su entorno local:
-* **1. Servidor de Base de Datos (BD):**
-    * **MySQL Server:** Necesario para alojar la base de datos `panaderia_bd`
-* **2. Lenguaje de programación:**
-    * **Python 3.x:** Requerido para ejecutar el script del servidor (`app.py`) que maneja la lógica de la BD.
-* **3. Librerías de Python:**
-    * **`mysql-connector-python`:** Esta es la librería específica que Python utiliza para conectarse, enviar consultas SQL y recibir respuestas del servidor MySQL.
+* **. Servidor de Base de Datos (BD):**
+    * **MySQL Server:** necesario para alojar la base de datos `panaderia_bd`
+* **. Lenguaje de programación:**
+    * **Python 3.x:** requerido para ejecutar el script del servidor (`app.py`) que maneja la lógica de la BD.
+* **. Librerías de Python:**
+    * **`mysql-connector-python`:** librería específica que Python utiliza para conectarse, enviar consultas SQL y recibir respuestas del servidor MySQL.
+    * **`Flask`:** micro-framework para el backend y las rutas API.
+    * **`Flask-CORS`:** permite que el frontend (servido por el navegador) pueda hacer peticiones al servidor Flask en 127.0.0.1:5000.
+    *  **`waitress`:** librería que actúa como servidor, permitiendo que Flask se ejecute con estabilidad y alto rendimiento para manejar un tráfico de usuarios real.
 
 
 ## Metodología y equipo
 
 El proyecto fue desarrollado utilizando la metodología Scrum-Kanban (Scrumban).
 
-- Propietario del Producto: dueño de la panadería.
+- Propietario del producto: dueño de la panadería.
 
-- Experto en Scrum y BD: Sol Ponce.
+- Líder en Scrum y BD: Sol Ponce.
 
 - Líder de Desarrollo: Aldana Aranda.
 
