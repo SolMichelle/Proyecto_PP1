@@ -263,4 +263,43 @@ input, textarea, button, h1, h2, h3, h4, h5, h6, p, label {
 .footer .list-unstyled li {
     margin-bottom: 8px;
 }
+/*Estilo mensaje formulario*/
+#mensaje-exito {
+    animation: slideInDown 0.5s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #28a745;
+}
 
+#mensaje-exito strong {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contactForm button[type="submit"] {
+    transition: all 0.3s ease;
+}
+
+#contactForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:valid {
+    border-color: #28a745;
+}
+
+.form-control:valid:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
