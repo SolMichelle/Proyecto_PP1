@@ -9,7 +9,7 @@ CREATE TABLE productos (
     stock INT 
 );
 
--- Tabla de cabecera de ventas (Pedido)
+-- Tabla eliminada posteriormente
 CREATE TABLE ventas_formulario (
     id_pedido INT PRIMARY KEY AUTO_INCREMENT,
     fecha DATETIME NOT NULL, 
@@ -19,7 +19,7 @@ CREATE TABLE ventas_formulario (
     total DECIMAL(10, 2) NOT NULL
 );
 
--- Tabla del detalle de la venta (productos por pedido)
+-- Tabla eliminada posteriormente
 CREATE TABLE ventas_detalle (
     id_venta_detalle INT PRIMARY KEY AUTO_INCREMENT,
     cantidad INT NOT NULL,
