@@ -27,7 +27,7 @@ CREATE TABLE ventas_detalle (
     variante VARCHAR(100),    
     id_pedido INT NOT NULL,
     id_producto INT NOT NULL,
-    FOREIGN KEY (id_pedido) REFERENCES ventas_cabecera(id_pedido),
+    FOREIGN KEY (id_pedido) REFERENCES ventas_formulario(id_pedido),
     FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
 );
 
