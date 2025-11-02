@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from BD import get_products, insert_sale
 from waitress import serve
 app = Flask(__name__) 
+CORS(app)
 @app.route('/products', methods=['GET'])
 def products():
     productos = get_products()
