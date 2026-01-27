@@ -134,4 +134,18 @@
     });
     window.miCarrito = { clear: clearCart, get: getCart };
   });
+
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updateCartUI();
+}
+
+  function updateCartUI() {
+    const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const countEl = document.getElementById('cart-count');
+    if (countEl) {
+        countEl.textContent = cart.reduce((acc, item) => acc + (item.qty || 1), 0);
+        countEl.classList.toggle('d-none', cart.length === 0);
+    }
+  }
 })();

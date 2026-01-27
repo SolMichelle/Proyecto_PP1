@@ -63,5 +63,26 @@ window.handleContactFormSubmit = function(event) {
             msgContainer.innerHTML = '';
         }, 8000);
 
+<<<<<<< Updated upstream
     }, 3000);
 };
+=======
+            const formData = {
+                nombre: document.getElementById('nombre').value,
+                correo: document.getElementById('correo').value,
+                telefono: document.getElementById('telefono').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+            
+            console.log('📧 Datos del formulario:', formData);
+            
+            mostrarMensajeExito();
+            
+            contactForm.reset();
+            contactForm.classList.remove('was-validated');
+            
+        });
+    }
+
+});
+>>>>>>> Stashed changes

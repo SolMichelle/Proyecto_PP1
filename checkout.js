@@ -1,5 +1,6 @@
 // Maneja la lógica de la página de pago y el envío seguro al servidor
 
+<<<<<<< Updated upstream
 (function () {
 	const STORAGE_KEY = 'miCarritoV1';
     
@@ -112,5 +113,55 @@
 	      }, 1200);
 	    });
 	});
+=======
+  document.addEventListener('DOMContentLoaded', function(){
+    renderCart();
+    const form = document.getElementById('checkout-form');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+      const msg = document.getElementById('checkout-msg');
+      msg.innerHTML = '<div class="alert alert-info">Procesando pago…</div>';
+      setTimeout(()=> {
+        localStorage.removeItem(STORAGE_KEY);
+        msg.innerHTML = '<div class="alert alert-success">Pago realizado con éxito. Gracias por su compra.</div>';
+        try { window.opener?.location && window.opener.location.reload(); } catch(e){}
+        fetch('http://127.0.0.1:5000/pedidos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          'cliente': {
+            'nombre': form['nombre'].value,
+            'correo': form['correo'].value,
+            'direccion': form['direccion'].value,
+            'tarjeta': form['tarjeta'].value
+          },
+          'carrito': getCart(),
+          'total': calcTotal(getCart())
+        })}).then(response => response.json()).then(data => {
+          if (data.status === 'success') {
+            setTimeout(()=> window.location.href = 'main.html', 2500);
+          }
+        });
+      }, 1200);
+    });
+  });
+
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updateCartUI();
+}
+
+  function updateCartUI() {
+    const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const countEl = document.getElementById('cart-count');
+    if (countEl) {
+        countEl.textContent = cart.reduce((acc, item) => acc + (item.qty || 1), 0);
+        countEl.classList.toggle('d-none', cart.length === 0);
+    }
+  }
+  
+>>>>>>> Stashed changes
 })();
 

@@ -1,6 +1,7 @@
 // Lógica principal para la barra de búsqueda y el menú de navegación.
 
 document.addEventListener('DOMContentLoaded', () => {
+<<<<<<< Updated upstream
     const searchIcon = document.getElementById('search-icon');
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -42,3 +43,29 @@ document.addEventListener('DOMContentLoaded', () => {
         searchButton.addEventListener('click', handleSearch);
     }
 });
+=======
+    const searchInput = document.querySelector('.input-group input[type="text"]');
+    const searchButton = document.querySelector('.input-group button');
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            alert(`Buscando: "${searchTerm}" (esta funcionalidad se completará en la página de productos)`); } else {
+            alert('Por favor, ingresa un término de búsqueda.');} });
+    searchInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            searchButton.click(); }});});
+
+const STORAGE_KEY = 'miCarritoV1';
+function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updateCartUI();
+}
+function updateCartUI() {
+    const cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const countEl = document.getElementById('cart-count');
+    if (countEl) {
+        countEl.textContent = cart.reduce((acc, item) => acc + (item.qty || 1), 0);
+        countEl.classList.toggle('d-none', cart.length === 0);
+    }
+}
+>>>>>>> Stashed changes
