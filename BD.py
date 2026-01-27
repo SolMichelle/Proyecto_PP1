@@ -95,7 +95,7 @@ def insert_venta_formulario(customer_data: Dict[str, Any], cart_items: List[Dict
         id_generado_pedido = cursor.lastrowid 
 
         # 2. Inserción en la tabla 'Ventas' (Relación N:N entre Pedidos y Productos)
-        # Tu script define: id_venta (PK), id_pedido (FK), id_producto (FK)
+        
         query_ventas_relacion = """
             INSERT INTO Ventas 
             (id_pedido, id_producto)

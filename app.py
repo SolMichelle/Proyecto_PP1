@@ -1,9 +1,8 @@
-<<<<<<< Updated upstream
 from flask import Flask, jsonify, request
-from BD import get_products, insert_sale
+from BD import get_products, insert_venta_formulario
 from waitress import serve
 app = Flask(__name__) 
-=======
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import BD
@@ -11,7 +10,7 @@ import BD
 app = Flask(__name__)
 CORS(app)
 
->>>>>>> Stashed changes
+
 @app.route('/products', methods=['GET'])
 def listar_productos():
     productos = BD.get_products()
