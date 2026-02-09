@@ -303,3 +303,21 @@ input, textarea, button, h1, h2, h3, h4, h5, h6, p, label {
 .form-control:valid:focus {
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
+
+.carousel-caption.caption-overlay {
+    left: 1rem;
+    right: 1rem;
+    bottom: 20px;
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    max-width: calc(100% - 2rem);
+    margin: 0 auto;
+    text-align: center;
+}
+.carousel-caption.caption-overlay h5 {
+    color: #ffe7d7;
+    margin: 0;
+    font-size: 1.6rem;
+}
