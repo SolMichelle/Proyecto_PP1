@@ -18,8 +18,6 @@ def connect_db():
         # En una aplicación real, se usaría un sistema de logging.
         print(f"Error al conectar a MySQL: {e}")
         return None
-
-
 # --------------------------------------------------------------------
 # 2. FUNCIÓN PARA CARGAR DATOS (SELECT)
 
@@ -57,8 +55,8 @@ def get_products():
 def insert_sale(customer_data: dict, cart_items: list, total_amount: float) -> bool:
     """
     Realiza la transacción de la venta: 
-    1. Inserta la cabecera (ventas_formulario).
-    2. Inserta el detalle (ventas_detalle) por cada producto.
+    1. Inserta la cabecera (pedidos).
+    2. Inserta el detalle en la tabla `ventas` (relación muchos-a-muchos entre pedidos y productos) por cada producto.
     3. Confirma la transacción.
     
     Args:
@@ -82,8 +80,8 @@ def insert_sale(customer_data: dict, cart_items: list, total_amount: float) -> b
         conn.start_transaction()
 
         query_cabecera = """
-            INSERT INTO ventas_formulario 
-            (fecha, nombre_cliente, correo, contacto, total)
+            INSERT INTO pedidos 
+            (fecha, nombre, direccion, contacto, total)
             VALUES (%s, %s, %s, %s, %s)
         """
         data_cabecera = (
@@ -95,16 +93,14 @@ def insert_sale(customer_data: dict, cart_items: list, total_amount: float) -> b
         )
         
         cursor.execute(query_cabecera, data_cabecera)
-        id_pedido = cursor.lastrowid # Obtiene el ID generado automáticamente (PRIMARY KEY)
-
+        id_pedido = cursor.lastrowid 
         query_detalle = """
-            INSERT INTO ventas_detalle 
+            INSERT INTO ventas 
             (id_pedido, id_producto, cantidad, subtotal)
             VALUES (%s, %s, %s, %s)
         """
 
         for item in cart_items:
-            # item['price'] es el precio unitario obtenido del carrito
             subtotal = item['price'] * item['qty']
             data_detalle = (
                 id_pedido, 
@@ -181,7 +177,7 @@ def run_reporting_queries():
             T3.nombre AS producto, 
             T2.cantidad 
         FROM ventas_formulario T1 
-        JOIN ventas_detalle T2 ON T1.id_pedido = T2.id_pedido
+        JOIN ventas T2 ON T1.id_pedido = T2.id_pedido
         JOIN productos T3 ON T2.id_producto = T3.id_producto
         ORDER BY T1.id_pedido DESC
         LIMIT 3;
@@ -199,49 +195,3 @@ def run_reporting_queries():
     cursor.close()
     conn.close()
     print("=======================================================")
-
-
-# --------------------------------------------------------------------
-# Ejemplo de uso (Descomentar y ejecutar en la terminal)
-# --------------------------------------------------------------------
-# if __name__ == '__main__':
-#     # 1. Ejecuta la simulación de una venta primero (si no hay datos)
-#     # 2. Luego ejecuta el reporte para ver los resultados
-#     
-#     # run_reporting_queries()
-#     pass
-
-
-# --------------------------------------------------------------------
-# Descomentar para probar después de configurar DB_CONFIG
-# --------------------------------------------------------------------
-# if __name__ == '__main__':
-#     print("--- PRUEBA DE CONEXIÓN Y CONSULTA DE PRODUCTOS ---")
-#     productos = get_products()
-#     if productos:
-#         print(f"Se cargaron {len(productos)} productos:")
-#         print(productos[0])
-#         print("...")
-#     else:
-#         print("Error: No se pudieron cargar productos. Revise la conexión y la tabla.")
-        
-#     print("\n--- PRUEBA DE SIMULACIÓN DE VENTA ---")
-#     ejemplo_cliente = {
-#         'nombre': 'Juan Pérez',
-#         'correo': 'juan@ejemplo.com',
-#         'contacto': '3512223334'
-#     }
-#     
-#     # Nota: Los IDs deben existir en la tabla 'productos'
-#     ejemplo_carrito = [
-#         {'id': 1, 'qty': 2, 'price': 550.00},  # Factura: Alcayota
-#         {'id': 10, 'qty': 1, 'price': 350.00}, # Tortita: Raspada
-#     ]
-#     
-#     ejemplo_total = (2 * 550.00) + (1 * 350.00)
-#     
-#     if insert_sale(ejemplo_cliente, ejemplo_carrito, ejemplo_total):
-#         print("Venta insertada correctamente en la BDD.")
-#     else:
-#         print("Fallo al insertar la venta.")
-
