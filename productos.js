@@ -196,11 +196,21 @@ document.querySelectorAll('.categoria-link').forEach(link => {
         const categoria = this.getAttribute('data-categoria');
         
         document.querySelectorAll('#productosContainer [data-categoria]').forEach(card => {
-            if (categoria === 'todas' || card.getAttribute('data-categoria') === categoria) {
-                card.style.display = '';
+            const cardCategoria = card.getAttribute('data-categoria');
+            let mostrar = false;
+            
+            if (categoria === 'todas') {
+                mostrar = true;
+            } else if (categoria === 'panaderia') {
+                // Panadería: mostrar todo EXCEPTO pastelería, confitería y galletas.
+                mostrar = cardCategoria !== 'pasteleria' && cardCategoria !== 'confiteria' && cardCategoria !== 'galletas';
+            } else if (categoria === 'confiteria') {
+                mostrar = cardCategoria === 'confiteria' || cardCategoria === 'galletas';
             } else {
-                card.style.display = 'none';
+                mostrar = cardCategoria === categoria;
             }
+            
+            card.style.display = mostrar ? '' : 'none';
         });
     });
 });
