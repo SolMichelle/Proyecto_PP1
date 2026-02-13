@@ -5,7 +5,6 @@ from datetime import datetime
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root', 
-    #'password': '',
     'database': 'panaderia_bd'
 }
 
@@ -15,7 +14,6 @@ def connect_db():
         conn = mysql.connector.connect(**DB_CONFIG)
         return conn
     except Error as e:
-        # En una aplicación real, se usaría un sistema de logging.
         print(f"Error al conectar a MySQL: {e}")
         return None
 # --------------------------------------------------------------------
@@ -76,40 +74,33 @@ def insert_sale(customer_data: dict, cart_items: list, total_amount: float) -> b
     success = False
     
     try:
-        # Deshabilitar auto-commit e iniciar la transacción
-        conn.start_transaction()
+       conn.start_transaction()
 
-        query_cabecera = """
-            INSERT INTO pedidos 
-            (fecha, nombre, direccion, contacto, total)
-            VALUES (%s, %s, %s, %s, %s)
-        """
+        # Insertar en la tabla Pedidos (según panaderia_bd_create.sql)
+        query_cabecera = (
+            "INSERT INTO Pedidos (nombre, correo, direccion, tarjeta, total)"
+            " VALUES (%s, %s, %s, %s, %s)"
+        )
         data_cabecera = (
-            datetime.now(),
-            customer_data.get('nombre'), 
-            customer_data.get('correo'), 
-            customer_data.get('contacto'), 
+            customer_data.get('nombre'),
+            customer_data.get('correo'),
+            customer_data.get('direccion'),
+            customer_data.get('tarjeta'),
             total_amount
         )
-        
-        cursor.execute(query_cabecera, data_cabecera)
-        id_pedido = cursor.lastrowid 
-        query_detalle = """
-            INSERT INTO ventas 
-            (id_pedido, id_producto, cantidad, subtotal)
-            VALUES (%s, %s, %s, %s)
-        """
 
+        cursor.execute(query_cabecera, data_cabecera)
+        id_pedido = cursor.lastrowid
+
+        # La tabla Ventas sólo almacena id_pedido e id_producto según el esquema.
+        # Insertamos una fila por unidad vendida (repite según cantidad) para conservar la info de cantidad.
+        query_ventas = "INSERT INTO Ventas (id_pedido, id_producto) VALUES (%s, %s)"
         for item in cart_items:
-            subtotal = item['price'] * item['qty']
-            data_detalle = (
-                id_pedido, 
-                item['id'], 
-                item['qty'], 
-                subtotal
-            )
-            cursor.execute(query_detalle, data_detalle)
-        
+            qty = int(item.get('qty', 1) or 1)
+            prod_id = int(item.get('id')) if item.get('id') is not None else None
+            for _ in range(max(1, qty)):
+                cursor.execute(query_ventas, (id_pedido, prod_id))
+
         conn.commit() 
         success = True
         
@@ -195,3 +186,4 @@ def run_reporting_queries():
     cursor.close()
     conn.close()
     print("=======================================================")
+
